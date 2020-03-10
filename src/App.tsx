@@ -8,11 +8,14 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import { FirebaseAuthProvider } from '@react-firebase/auth';
 import { FirebaseConfig } from './firebase';
+import AppLoader from './components/shared/app-loader/AppLoader';
 
 function App() {
   const [currentUser, setCurrentUser] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSigninWithProvider = (providerName: string) => {
+    setIsLoading(true);
     let authProvider = null;
     switch (providerName) {
       case 'google':
@@ -38,22 +41,27 @@ function App() {
         .then(data => {
           console.log(data);
           setCurrentUser(data.user);
+          setIsLoading(false);
         })
         .catch((error: firebase.FirebaseError) => {
           console.log(error);
+          setIsLoading(false);
         });
   };
 
   return (
-    <div className="App">
-      <FirebaseAuthProvider {...FirebaseConfig} firebase={firebase}>
-        <Suspense fallback="loading">
-          <AppHeader currentUser={currentUser} />
-          <NavigationBar />
-          <ContentWrapper onSignInWithProvider={handleSigninWithProvider} />
-        </Suspense>
-      </FirebaseAuthProvider>
-    </div>
+    <FirebaseAuthProvider {...FirebaseConfig} firebase={firebase}>
+      <div className="App">
+        {isLoading && <AppLoader />}
+        {!isLoading && (
+          <Suspense fallback="loading">
+            <AppHeader currentUser={currentUser} />
+            <NavigationBar />
+            <ContentWrapper onSignInWithProvider={handleSigninWithProvider} />
+          </Suspense>
+        )}
+      </div>
+    </FirebaseAuthProvider>
   );
 }
 
