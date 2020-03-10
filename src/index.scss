@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+}
+
+.form-wrapper {
+  font-family: 'Times New Roman', Times, serif;
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+  height: 100%;
+
+  .Form {
+    margin-top: 30%;
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid gray;
+    label {
+      font-size: 15px;
+    }
+  }
+
+  button {
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 2px;
+    &:hover,
+    &:focus,
+    &:disabled {
+      font-size: 16px;
+      color: black;
+      border: 1px solid gray;
+      background-color: white;
+    }
+  }
+
+  input {
+    border-color: gray;
+    border-radius: 2px;
+  }
+
+  .text-error {
+    color: red;
+    font-size: 12px;
+    margin-left: 0.5rem;
+  }
+}
+.form-data-wrapper {
+  margin-top: 2em;
+  font-size: 22px;
+  color: black;
+  button {
+    margin: 2px;
+  }
+}
+
+// animations here
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slide-top {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.ping {
+  -webkit-animation: ping 0.8s ease-in-out infinite both;
+  animation: ping 0.8s ease-in-out infinite both;
+}
+
+@-webkit-keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
