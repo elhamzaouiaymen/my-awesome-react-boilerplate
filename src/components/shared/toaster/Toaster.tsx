@@ -19,12 +19,13 @@ const Toaster: FunctionComponent<ToasterProps | any> = ({ visible, onClose }) =>
 
   const StyledToastWrapper = styled.div`
     position: absolute;
-    left: 1em;
+    right: 1em;
     top: 1em;
     width: 180px;
     padding-right: 1em;
     min-height: auto;
     border: 1px solid black;
+    background-color: white;
   `;
 
   const StyledCloseButton = styled.div`
