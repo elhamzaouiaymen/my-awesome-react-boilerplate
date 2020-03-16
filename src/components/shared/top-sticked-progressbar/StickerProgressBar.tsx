@@ -16,8 +16,8 @@ export const StickedProgressBar = () => {
     height: 10px;
     width: ${currentProgress}%;
     background: black;
-    -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-    animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    -webkit-animation: scale-up-hor-left 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-hor-left 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
     @-webkit-keyframes scale-up-hor-left {
       0% {
