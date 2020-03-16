@@ -82,19 +82,27 @@ const Login: FunctionComponent<any> = ({ onSignInWithProvider }) => {
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Remember me!" />
             </Form.Group>
-            <Button disabled={!isValid} type="submit">
+            <button className="button" disabled={!isValid} type="submit">
               Login
-            </Button>
+            </button>
           </Form>
         )}
       </Formik>
 
       <div className="form-data-wrapper">
         <pre>{JSON.stringify(formData)}</pre>
-        <button onClick={handleToggleToast}>Toggle toast</button>
-        <button onClick={() => handleSignInWithProvider('google')}>Sign In with Google</button>
-        <button onClick={() => handleSignInWithProvider('facebook')}>Sign In with Facebook</button>
-        <button onClick={() => handleSignInWithProvider('github')}>Sign In with Github</button>
+        <button className="button" onClick={handleToggleToast}>
+          Toggle toast
+        </button>
+        <button className="button" onClick={() => handleSignInWithProvider('google')}>
+          Sign In with Google
+        </button>
+        <button className="button" onClick={() => handleSignInWithProvider('facebook')}>
+          Sign In with Facebook
+        </button>
+        <button className="button" onClick={() => handleSignInWithProvider('github')}>
+          Sign In with Github
+        </button>
       </div>
     </div>
   );

@@ -2,6 +2,27 @@ body {
   margin: 0;
 }
 
+.button {
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 2px;
+  &:hover,
+  &:focus,
+  &:disabled {
+    font-size: 16px;
+    color: black;
+    border: 1px solid gray;
+    background-color: white;
+  }
+}
+
+input {
+  border: 1px solid black !important;
+  border-radius: 0 !important;
+}
+
 .form-wrapper {
   font-family: 'Times New Roman', Times, serif;
   margin: auto;
@@ -18,34 +39,14 @@ body {
       font-size: 15px;
     }
   }
-
-  button {
-    font-size: 16px;
-    color: white;
-    background-color: black;
-    border: none;
-    border-radius: 2px;
-    &:hover,
-    &:focus,
-    &:disabled {
-      font-size: 16px;
-      color: black;
-      border: 1px solid gray;
-      background-color: white;
-    }
-  }
-
-  input {
-    border-color: gray;
-    border-radius: 2px;
-  }
-
-  .text-error {
-    color: red;
-    font-size: 12px;
-    margin-left: 0.5rem;
-  }
 }
+
+.text-error {
+  color: red;
+  font-size: 12px;
+  margin-left: 0.5rem;
+}
+
 .form-data-wrapper {
   margin-top: 2em;
   font-size: 22px;

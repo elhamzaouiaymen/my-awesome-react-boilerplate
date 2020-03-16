@@ -11,8 +11,8 @@ const pocList = [
     path: '/animations',
   },
   {
-    name: 'JWT',
-    path: '/jwt',
+    name: 'Push Notification API',
+    path: '/notifications',
   },
   {
     name: 'Games',

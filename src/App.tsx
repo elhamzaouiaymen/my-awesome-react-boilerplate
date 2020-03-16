@@ -9,6 +9,7 @@ import 'firebase/auth';
 import { FirebaseAuthProvider } from '@react-firebase/auth';
 import { FirebaseConfig } from './firebase';
 import AppLoader from './components/shared/app-loader/AppLoader';
+import { StickedProgressBar } from './components/shared/top-sticked-progressbar/StickerProgressBar';
 
 function App() {
   const [currentUser, setCurrentUser] = useState();
@@ -52,6 +53,7 @@ function App() {
   return (
     <FirebaseAuthProvider {...FirebaseConfig} firebase={firebase}>
       <div className="App">
+        <StickedProgressBar />
         {isLoading && <AppLoader />}
         {!isLoading && (
           <Suspense fallback="loading">
