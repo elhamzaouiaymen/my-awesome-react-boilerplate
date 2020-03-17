@@ -11,10 +11,21 @@ const Notifications = (props: any) => {
       margin: 0.5em;
     }
   `;
+
+  const handleOneSignalPush = () => {
+    // TODO: handle this loginc later
+  };
+
+  const handleFCMPush = () => {};
+
   return (
     <StyledWrapper>
-      <button className="button">Push notification (One Signal)</button>
-      <button className="button">Push notification (FCM)</button>
+      <button onClick={handleOneSignalPush} className="button">
+        Push notification (One Signal)
+      </button>
+      <button onClick={handleFCMPush} className="button">
+        Push notification (FCM)
+      </button>
     </StyledWrapper>
   );
 };
